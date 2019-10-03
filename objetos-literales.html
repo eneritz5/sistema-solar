@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+.planeta{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+
+}
+
+h1{
+    color: slateblue;
+}
+
+img{
+width: 200px;
+
+}
+
+.card{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    box-shadow: 0 5px 10px 0 teal;
+    padding: 0px 30px;
+    margin: 100px;
+
+}
+</style>
+
+
+</head>
+<body>
+    <script>
+    let sistemaSolar = {
+
+mercurio: {
+    nombre: 'mercurio',
+    color: 'gris',
+    temperatura: 350,
+    imagen: 'https://www.astromia.com/fotosolar/fotos/planetamercurio.jpg'
+
+},
+venus: {
+    nombre: 'venus',
+    color: 'blanco',
+    temperatura: 460,
+    imagen : 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Venus-real_color.jpg/220px-Venus-real_color.jpg'
+
+},
+tierra: {
+    nombre: 'tierra',
+    color: 'morado',
+    temperatura: 14,
+    imagen : 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/5a0ab2a75bafe87f4d3f9a63/acaba-tiempo_0.jpg'
+},
+marte: {
+    nombre: 'marte',
+    color: 'rojo',
+    temperatura: -46,
+    imagen : 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/55365b6b34099b0279c8fb2e/slide-marte.jpg'
+},
+jupiter: {
+    nombre: 'jupiter',
+    color: 'marrón',
+    temperatura: -121,
+    imagen : 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jupiter_by_Cassini-Huygens.jpg/280px-Jupiter_by_Cassini-Huygens.jpg'
+},
+saturno: {
+    nombre: 'saturno',
+    color: 'amarillo',
+    temperatura: -130,
+    imagen : 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/558d2b15010e26221b57df75/saturno.jpg'
+},
+urano: {
+    nombre: 'urano',
+    color: 'azul',
+    temperatura: -205,
+    imagen : 'http://www.manzanares.es/v2/sites/paseo/img/urano/urano1.jpg'
+},
+neptuno: {
+    nombre: 'neptuno',
+    color: 'azul',
+    temperatura: -220,
+    imagen : 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/280px-Neptune_Full.jpg'
+},
+pluton: {
+    nombre: 'plutón',
+    color: 'blanco',
+    temperatura: -229,
+    imagen : 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Nh-pluto-in-true-color_2x_JPEG.jpg/1200px-Nh-pluto-in-true-color_2x_JPEG.jpg'
+}
+
+};
+
+let planeta1 = window.prompt('Dime un planeta del Sistema Solar:');
+let planeta2 = window.prompt('Dime un planeta del Sistema Solar:');
+let planeta3 = window.prompt('Dime un planeta del Sistema Solar:');
+
+if((sistemaSolar[`${planeta1}`] && sistemaSolar[`${planeta2}`] && sistemaSolar[`${planeta3}`]) && (planeta1 !== planeta2 && planeta1 !== planeta3 && planeta2 !== planeta3)){
+    
+    
+    
+document.write(`
+
+<div class="planeta">
+<div class="card">
+<h1> ${sistemaSolar[`${planeta1}`].nombre}</h1>
+<p><img src=${sistemaSolar[`${planeta1}`].imagen}></p>
+<p>Color del planeta: ${sistemaSolar[`${planeta1}`].color}</p>
+<p>Temperatura del planeta: ${sistemaSolar[`${planeta1}`].temperatura}</p>
+</div>
+<div class="card">
+<h1> ${sistemaSolar[`${planeta2}`].nombre}</h1>
+<p> <img src=${sistemaSolar[`${planeta2}`].imagen}></p>
+<p>Color del planeta: ${sistemaSolar[`${planeta2}`].color}</p>
+<p>Temperatura del planeta: ${sistemaSolar[`${planeta2}`].temperatura}</p>
+</div>
+<div class="card">
+<h1>${sistemaSolar[`${planeta3}`].nombre}</h1>
+<p><img src=${sistemaSolar[`${planeta3}`].imagen}></p>
+<p>Color del planeta: ${sistemaSolar[`${planeta3}`].color}</p>
+<p>Temperatura del planeta: ${sistemaSolar[`${planeta3}`].temperatura}</p>
+</div>
+</div>
+
+`)
+} else {
+    document.write('Escribe tres planetas CORRECTAMENTE.')
+} 
+
+    </script>
+</body>
+</html>
